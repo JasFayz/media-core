@@ -46,7 +46,7 @@ class OptimizeImageAction
 
         $this->optimize($tmpOriginal, $tmpWebp);
 
-        $hash = hash_file('sha256', $tmpWebp);
+        $hash = substr(hash_file('sha256', $tmpWebp), 0, 32);
 
         $filename = $hash . '.webp';
 
